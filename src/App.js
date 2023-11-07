@@ -1,10 +1,10 @@
-import UserForm from "./UserForm";
 import "./App.css";
+import Madlib from "./Madlib";
 
 function App() {
   return (
-    <div>
-      <UserForm />
+    <div className="App">
+      <Madlib />
     </div>
   );
 }

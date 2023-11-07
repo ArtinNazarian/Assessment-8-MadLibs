@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./UserForm.css";
 
-const UserForm = ({ makeStory }) => {
+const UserForm = ({ setShowStory, makeStory }) => {
   const initialState = {
     noun: "",
     noun2: "",
@@ -21,14 +21,15 @@ const UserForm = ({ makeStory }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     makeStory({ ...formData });
-    //setShowStory(true);
-    //setFormData(initialState);
+    setShowStory(true);
+    setFormData(initialState);
   };
 
   return (
     <div className="UserForm">
       <form onSubmit={handleSubmit}>
         <input
+          required
           id="noun"
           type="text"
           name="noun"
@@ -37,6 +38,7 @@ const UserForm = ({ makeStory }) => {
           onChange={handleChange}
         />
         <input
+          required
           id="noun2"
           type="text"
           name="noun2"
@@ -45,6 +47,7 @@ const UserForm = ({ makeStory }) => {
           onChange={handleChange}
         />
         <input
+          required
           is="adjective"
           type="text"
           name="adjective"
@@ -53,6 +56,7 @@ const UserForm = ({ makeStory }) => {
           onChange={handleChange}
         />
         <input
+          required
           id="color"
           type="text"
           name="color"
